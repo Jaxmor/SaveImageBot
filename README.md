@@ -16,3 +16,8 @@ I based my code off of this video, but instead of saving an image the user sends
 **Goals**
 1. Create a database to store the saved files.
 2. Create a website that allows the user to navigate through the database and display the files.
+
+**Known Issues**
+1. The bot saves all files correctly into a new folder, however if the user enters the save command again, the bot won't save any new
+files submitted after the first save command prompt. A temporary workaround is to delete the old folder and run the save command
+again, then all files should be saved in the new folder. Issue maybe caused by the bot not acknowledging already existing files.
