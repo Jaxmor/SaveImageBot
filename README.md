@@ -11,8 +11,8 @@ Python Version: Python 3.12.6<p>
 Credit:
 https://www.youtube.com/watch?v=pgmUBOV3IIs
 
-I based my code off of this video, but instead of saving an image the user sends, it saves all previous images found in the text channel
+I based my code off of this video, but instead of saving an image the user sends, it saves all previous images found in the text channel.
 
 **Goals**
-1. Create a database to store these images
-2. Create a website that allows the user to navigate through the database and display the image files
+1. Create a database to store the saved files.
+2. Create a website that allows the user to navigate through the database and display the files.
