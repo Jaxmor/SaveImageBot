@@ -23,7 +23,7 @@ async def save(ctx):
          os.makedirs(folder_name)
 
          found_images = False
-         image_counter = 1
+         image_counter = 1 #file index in text channel
 
     async for message in ctx.channel.history(oldest_first = True): #oldest_first allows the bot to start at the first message
         for attachment in message.attachments:
@@ -31,13 +31,13 @@ async def save(ctx):
                 found_images = True
                 try:
                     r = requests.get(attachment.url, stream = True)
-                    extension = os.path.splitext(attachment.filename)[1]
-                    image_name = (f'{folder_name}_{image_counter}{extension}')
-                    image_path = os.path.join(folder_name, image_name)
+                    extension = os.path.splitext(attachment.filename)[1] #tracks original file format
+                    image_name = (f'{folder_name}_{image_counter}{extension}') #file naming convention
+                    image_path = os.path.join(folder_name, image_name) #files are downloaded into newly created folder
                     with open(image_path, 'wb') as out_file:
                         shutil.copyfileobj(r.raw, out_file)
                         print("Downloading image: " + image_name + " into folder " + folder_name)
-                        image_counter += 1
+                        image_counter += 1 
                 except Exception as e:
                     print ("Error: No Images")
                     await ctx.send("Error Downloading Images")
