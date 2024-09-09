@@ -1,6 +1,5 @@
 import discord
 from discord.ext import commands
-import uuid
 import requests
 import shutil
 import os
@@ -24,18 +23,21 @@ async def save(ctx):
          os.makedirs(folder_name)
 
          found_images = False
+         image_counter = 1
 
-    async for message in ctx.channel.history(limit = 200): #Change limit value as needed
+    async for message in ctx.channel.history(oldest_first = True): #oldest_first allows the bot to start at the first message
         for attachment in message.attachments:
             if attachment.url[0:26] == "https://cdn.discordapp.com":
                 found_images = True
                 try:
                     r = requests.get(attachment.url, stream = True)
-                    image_name = str(uuid.uuid4()) + '.png'
+                    extension = os.path.splitext(attachment.filename)[1]
+                    image_name = (f'{folder_name}_{image_counter}{extension}')
                     image_path = os.path.join(folder_name, image_name)
                     with open(image_path, 'wb') as out_file:
                         shutil.copyfileobj(r.raw, out_file)
                         print("Downloading image: " + image_name + " into folder " + folder_name)
+                        image_counter += 1
                 except Exception as e:
                     print ("Error: No Images")
                     await ctx.send("Error Downloading Images")
