@@ -25,7 +25,7 @@ async def save(ctx):
 
          found_images = False
 
-    async for message in ctx.channel.history(limit = 200):
+    async for message in ctx.channel.history(limit = 200): #Change limit value as needed
         for attachment in message.attachments:
             if attachment.url[0:26] == "https://cdn.discordapp.com":
                 found_images = True
