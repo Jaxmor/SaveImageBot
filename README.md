@@ -3,6 +3,7 @@ This is code for a discord bot I made for a server that saves image attachments.
 Using the command '!save', the bot will download all image attachments from the text channel where the command was called from.
 
 All python code was written in VS Code.
+Python Version: Python 3.12.6
 
 Credit:
 https://www.youtube.com/watch?v=pgmUBOV3IIs
