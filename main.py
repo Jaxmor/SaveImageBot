@@ -15,6 +15,7 @@ async def on_ready():
         print(f'Logged in as {client.user.name}!')
         print('------')
 
+@commands.has_role('Owner')
 @client.command()
 async def save(ctx):
     message = ctx.message
