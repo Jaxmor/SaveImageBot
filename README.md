@@ -1,4 +1,4 @@
-# StoreBot
+# SaveBot
 This is code for a discord bot I made for a server that stores discord message attachments into the users computer.
 This bot exclusively saved images, however it's been changed to save the original file format found in the discord message including .jpg, .png, .gif, and .mp4.
 Using the command '!save', the bot will download all attachments in chronological order from the text channel where the command was called from.
